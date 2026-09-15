@@ -36,7 +36,7 @@ submission:
     frameworks: ["FastAPI", "Next.js", "React", "Tailwind CSS"]
     ibm_technologies: []
     databases: ["Supabase/PostgreSQL"]
-    other: ["yfinance", "Google Gemini API", "Groq API", "Docker/Caddy-ready deployment", "PM2"]
+    other: ["yfinance", "Google Gemini API", "Groq API", "Vercel", "Render", "Genspark AI", "Crawl4AI", "cron-job.org"]
   what_we_are_most_proud_of: >
     The strongest part of Vriddhi is its explainable research model: every score is
     decomposed into named layers and metrics, while the platform explicitly avoids
@@ -53,6 +53,7 @@ artifacts:
   architecture_doc: "docs/architecture.md"
   demo_video: "demo/demo-video-link.txt"
   live_demo: "demo/live-demo-url.txt"
-  screenshots: "demo/screenshots/"
+  project_photos: "https://drive.google.com/drive/folders/1iW9uNCMlKc1lek__hjHFoS3TfmvBm50C?usp=sharing"
   presentation: "presentation/"
+
 
