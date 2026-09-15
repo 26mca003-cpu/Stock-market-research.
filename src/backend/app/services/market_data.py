@@ -34,6 +34,18 @@ class MarketDataService:
                 prev_close = float(info.get("previousClose", last_price) or last_price or 1.0)
                 day_change_pct = round(((last_price - prev_close) / prev_close) * 100, 2) if prev_close else 0.0
 
+            # Yahoo can return 0 for Indian symbols in fast_info/info while
+            # history still has valid candles. Use the latest two closes.
+            if last_price <= 0.0:
+                df = t.history(period="5d")
+                if not df.empty and "Close" in df:
+                    closes = df["Close"].dropna()
+                    closes = closes[closes > 0]
+                    if not closes.empty:
+                        last_price = float(closes.iloc[-1])
+                        prev_close = float(closes.iloc[-2]) if len(closes) > 1 else last_price
+                        day_change_pct = round(((last_price - prev_close) / prev_close) * 100, 2) if prev_close else 0.0
+
             return {
                 "last": round(last_price, 2),
                 "day_change_pct": day_change_pct,
@@ -119,3 +131,4 @@ class MarketDataService:
         except Exception as e:
             logger.error(f"Error fetching fundamentals for {sym}: {e}")
             return {"info": {}, "financials": {}, "balance_sheet": {}, "cashflow": {}}
+
