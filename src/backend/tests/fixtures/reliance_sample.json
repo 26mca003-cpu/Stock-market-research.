@@ -1,0 +1,29 @@
+{
+  "ticker": "RELIANCE.NS",
+  "expected_output": {
+    "score_total": 78,
+    "layers": {
+      "L1": 12,
+      "L2": 20,
+      "L3": 10,
+      "L4": 16,
+      "L5": 12,
+      "L6": 8
+    }
+  },
+  "inputs": {
+    "fundamentals": {
+      "roe_5y": 14.2,
+      "roce_5y": 13.1,
+      "de_ratio": 0.44,
+      "fcf_positive_years": 4
+    },
+    "technicals": {
+      "above_ma200": true,
+      "above_ma50": true,
+      "rsi14": 58.2,
+      "wk52_position": 0.62,
+      "volume_trend": "rising"
+    }
+  }
+}

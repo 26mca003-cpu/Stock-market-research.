@@ -1,0 +1,15 @@
+# VRIDDHI Automated Jobs Crontab (TRD §14)
+# Edit with: crontab -e
+
+# Every 15 minutes: Fetch top stock news headlines and update sentiment
+*/15 * * * * cd /var/www/vriddhi/backend && /var/www/vriddhi/backend/venv/bin/python jobs/news_cron.py >> /var/log/vriddhi/news_cron.log 2>&1
+
+# Daily at 18:00 IST (12:30 UTC): Refresh fundamentals & invalidate stale 24h reports post-market close
+30 12 * * 1-5 cd /var/www/vriddhi/backend && /var/www/vriddhi/backend/venv/bin/python jobs/fundamentals_cron.py >> /var/log/vriddhi/fundamentals_cron.log 2>&1
+
+# Daily at 18:30 IST (13:00 UTC): Auto-detect new IPO listings and sync stock universe
+# Compares NSE master list against our database — any new ticker is automatically added
+0 13 * * 1-5 cd /var/www/vriddhi/backend && /var/www/vriddhi/backend/venv/bin/python jobs/new_listings_cron.py >> /var/log/vriddhi/new_listings_cron.log 2>&1
+
+# Hourly: Scan BSE announcements and download latest financial filings
+0 * * * * cd /var/www/vriddhi/backend && /var/www/vriddhi/backend/venv/bin/python jobs/filings_cron.py >> /var/log/vriddhi/filings_cron.log 2>&1

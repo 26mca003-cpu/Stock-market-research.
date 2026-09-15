@@ -1,0 +1,1 @@
+"""Vriddhi backend application package."""
