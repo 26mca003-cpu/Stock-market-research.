@@ -34,7 +34,7 @@ Vriddhi brings Indian-stock research into one workflow. Its FastAPI backend gath
 | Languages | Python, TypeScript, SQL |
 | Frameworks | FastAPI, Next.js, React, Tailwind CSS |
 | Data and AI | yfinance, Supabase/PostgreSQL, Google Gemini API, Groq API |
-| Deployment | Caddy, PM2, cron-ready jobs |
+| Deployment | Vercel, Render, Genspark AI, cron-job.org |
 
 ## Repository Structure
 
@@ -84,7 +84,7 @@ Run backend tests from `src/backend` with `pytest -v`.
 |---|---|
 | Demo video | [`demo/demo-video-link.txt`](demo/demo-video-link.txt) |
 | Live demo | [`demo/live-demo-url.txt`](demo/live-demo-url.txt) |
-| Screenshots | [`demo/screenshots/`](demo/screenshots/) |
+| Project photos | [Google Drive folder](https://drive.google.com/drive/folders/1iW9uNCMlKc1lek__hjHFoS3TfmvBm50C?usp=sharing) |
 | Presentation | [`presentation/`](presentation/) |
 
 ## Known Limitations
@@ -97,3 +97,4 @@ Run backend tests from `src/backend` with `pytest -v`.
 ## Responsible Use
 
 Vriddhi is an educational and factual computational platform, not investment advice. It does not provide buy, sell, or hold recommendations or price targets. Users should verify data and consult a SEBI-registered investment adviser before making financial decisions.
+
