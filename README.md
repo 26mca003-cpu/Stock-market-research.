@@ -74,7 +74,7 @@ npm install
 npm run dev
 ```
 
-Open `http://localhost:3000`.
+Open `https://vriddhi-research.vercel.app/`.
 
 Run backend tests from `src/backend` with `pytest -v`.
 
